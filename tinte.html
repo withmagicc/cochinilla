@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tintes de Cochinilla</title>
+    <title>Taller de Tintes de Cochinilla</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <meta property="og:image" content="https://withmagicc.github.io/cochinilla/whith.jpeg">
     <meta property="og:image:secure_url" content="https://withmagicc.github.io/cochinilla/whith.jpeg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:title" content="With Magic">
     <meta property="og:description" content="Tinte de Cochinilla">
     <link rel="shorcut icon" href="https://withmagicc.github.io/cochinilla/whith.jpeg">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         /* Estilos para fuentes personalizadas */
         body {
@@ -24,13 +24,24 @@
             font-family: 'Playfair Display', serif;
         }
     </style>
+    <style>
+    .my-flip.aos-animate {
+      animation: flip-multi 2s ease forwards;
+    }
+
+    @keyframes flip-multi {
+      0% { transform: rotateY(0deg); }
+      50% { transform: rotateY(360deg); }
+      100% { transform: rotateY(720deg); }
+    }
+  </style>
 </head>
 <body class="bg-stone-50 text-stone-800">
 
     <!-- Header y Navegación -->
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Título de la tienda -->
+            <!-- Título de la tienda, puedes reemplazarlo con una imagen de logo si tienes una -->
             <a href="#" class="text-2xl font-bold text-red-800 tracking-wider"><img src="https://withmagicc.github.io/cochinilla/whith.jpeg" alt="withmagic" style="max-width: 90px;border-radius: 50px;"></a>
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="#productos" class="text-stone-600 hover:text-red-700 transition duration-300">Productos</a>
@@ -61,8 +72,8 @@
                 <a href="#productos" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 inline-block">Ver Colores</a>
             </div>
             <!-- Contenedor de la foto -->
-            <div class="md:w-1/2">
-                <img src="https://img.freepik.com/foto-gratis/vista-superior-arreglo-colorido-sombras-ojos_23-2150252074.jpg" style="width: 400px;" class="w-full rounded-lg shadow-xl" alt="Muestra de tintes de cochinilla" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Imagen+no+disponible';">
+            <div class="md:w-1/2" data-aos="fade-down" data-aos-duration="1000">
+                <img src="./inicio.jpeg" alt="tintes" style="border-radius: 20px;">
             </div>
         </section>
 
@@ -76,8 +87,8 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                     
                     <!-- Tinte Rojo -->
-                    <div class="bg-stone-50 rounded-lg shadow-lg overflow-hidden group">
-                        <div class="w-full h-64 bg-red-600"></div>
+                    <div class="bg-stone-50 rounded-lg shadow-lg overflow-hidden group" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="w-full h-64 bg-red-600"><img src="./rojo.jpeg" alt="tinte rojo" class="w-full h-full object-cover"></div>
                         <div class="p-6 relative">
                             <h3 class="text-2xl font-bold mb-2">Rojo Vibrante</h3>
                             <p class="text-stone-600 mb-4 text-sm">El color clásico de la cochinilla. Perfecto para darle vida a tus tejidos.</p>
@@ -88,8 +99,8 @@
                     </div>
 
                     <!-- Tinte Naranja -->
-                    <div class="bg-stone-50 rounded-lg shadow-lg overflow-hidden group">
-                        <div class="w-full h-64 bg-orange-500"></div>
+                    <div class="bg-stone-50 rounded-lg shadow-lg overflow-hidden group" data-aos="fade-up"data-aos-duration="1500">
+                        <div class="w-full h-64 bg-orange-500"><img src="./naranja.jpeg" alt="tinte rojo" class="w-full h-full object-cover"></div>
                         <div class="p-6">
                             <h3 class="text-2xl font-bold mb-2">Naranja Natural</h3>
                             <p class="text-stone-600 mb-4 text-sm">Un tono cálido y terroso que evoca los atardeceres. Ideal para mezclas.</p>
@@ -100,8 +111,8 @@
                     </div>
 
                     <!-- Tinte Violeta -->
-                    <div class="bg-stone-50 rounded-lg shadow-lg overflow-hidden group">
-                        <div class="w-full h-64 bg-purple-600"></div>
+                    <div class="bg-stone-50 rounded-lg shadow-lg overflow-hidden group" data-aos="fade-up" data-aos-duration="2000">
+                        <div class="w-full h-64 bg-purple-600"><img src="./violeta.jpeg" alt="tinte rojo" class="w-full h-full object-cover"></div>
                         <div class="p-6">
                             <h3 class="text-2xl font-bold mb-2">Violeta Profundo</h3>
                             <p class="text-stone-600 mb-4 text-sm">Un color místico y elegante, logrado con nuestra técnica especial.</p>
@@ -183,10 +194,9 @@
             window.open(whatsappURL, '_blank');
         }
     </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
-
-
-
-
-
