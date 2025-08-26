@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller de Tintes de Cochinilla</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos para fuentes personalizadas */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <!-- Header y Navegación -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Título de la tienda, puedes reemplazarlo con una imagen de logo si tienes una -->
+            <a href="#" class="text-2xl font-bold text-red-800 tracking-wider">Cochinilla</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#productos" class="text-stone-600 hover:text-red-700 transition duration-300">Productos</a>
+                <a href="#nosotros" class="text-stone-600 hover:text-red-700 transition duration-300">Nosotros</a>
+                <a href="#contacto" class="bg-red-600 text-white py-2 px-5 rounded-full hover:bg-red-700 transition duration-300">Contacto</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-stone-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#productos" class="block py-2 px-4 text-sm text-stone-600 hover:bg-red-50">Productos</a>
+            <a href="#nosotros" class="block py-2 px-4 text-sm text-stone-600 hover:bg-red-50">Sobre Nosotros</a>
+            <a href="#contacto" class="block py-2 px-4 text-sm text-stone-600 hover:bg-red-50">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección Principal (Header con texto a la izquierda y foto a la derecha) -->
+        <section class="container mx-auto px-6 py-24 flex flex-col-reverse md:flex-row items-center gap-12">
+            <!-- Contenido de texto -->
+            <div class="md:w-1/2">
+                <h1 class="text-4xl md:text-6xl font-bold text-red-800 mb-4">El Arte de la Naturaleza</h1>
+                <p class="text-lg md:text-xl max-w-xl mb-8">Tintes naturales de cochinilla para dar vida a tus creaciones.</p>
+                <a href="#productos" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 inline-block">Ver Colores</a>
+            </div>
+            <!-- Contenedor de la foto -->
+            <div class="md:w-1/2">
+                <img src="https://placehold.co/600x400/D05A61/ffffff?text=Foto" class="w-full rounded-lg shadow-xl" alt="Muestra de tintes de cochinilla" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Imagen+no+disponible';">
+            </div>
+        </section>
+
+        <!-- Sección de Productos -->
+        <section id="productos" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                     <h2 class="text-4xl font-bold">Nuestros Tintes</h2>
+                     <p class="text-stone-600 mt-2">Cada color es una pieza de arte única y natural.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                    
+                    <!-- Tinte Rojo -->
+                    <div class="bg-stone-50 rounded-lg shadow-lg overflow-hidden group">
+                        <div class="w-full h-64 bg-red-600"></div>
+                        <div class="p-6 relative">
+                            <h3 class="text-2xl font-bold mb-2">Rojo Vibrante</h3>
+                            <p class="text-stone-600 mb-4 text-sm">El color clásico de la cochinilla. Perfecto para darle vida a tus tejidos.</p>
+                            <button onclick="orderProduct('Rojo')" class="mt-4 w-full bg-red-600 text-white py-2 px-4 rounded-lg flex items-center justify-center hover:bg-red-700 transition duration-300">
+                                Comprar por WhatsApp
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tinte Naranja -->
+                    <div class="bg-stone-50 rounded-lg shadow-lg overflow-hidden group">
+                        <div class="w-full h-64 bg-orange-500"></div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Naranja Natural</h3>
+                            <p class="text-stone-600 mb-4 text-sm">Un tono cálido y terroso que evoca los atardeceres. Ideal para mezclas.</p>
+                            <button onclick="orderProduct('Naranja')" class="mt-4 w-full bg-red-600 text-white py-2 px-4 rounded-lg flex items-center justify-center hover:bg-red-700 transition duration-300">
+                                Comprar por WhatsApp
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tinte Violeta -->
+                    <div class="bg-stone-50 rounded-lg shadow-lg overflow-hidden group">
+                        <div class="w-full h-64 bg-purple-600"></div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Violeta Profundo</h3>
+                            <p class="text-stone-600 mb-4 text-sm">Un color místico y elegante, logrado con nuestra técnica especial.</p>
+                            <button onclick="orderProduct('Violeta')" class="mt-4 w-full bg-red-600 text-white py-2 px-4 rounded-lg flex items-center justify-center hover:bg-red-700 transition duration-300">
+                                Comprar por WhatsApp
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Sobre Nosotros, Misión y Visión -->
+        <section id="nosotros" class="py-24 bg-red-50/50">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/600x400/D05A61/ffffff?text=Nuestro+Taller" class="rounded-lg shadow-xl" alt="Taller de Tintes de Cochinilla" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Imagen+no+disponible';">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-bold mb-4">Nuestra Historia y Misión</h2>
+                    <p class="text-stone-700 mb-4">
+                        Somos un equipo de artesanos dedicados a rescatar y preservar las técnicas ancestrales de teñido con cochinilla. Creemos en el poder de la naturaleza para crear colores vibrantes y duraderos, respetando el medio ambiente en cada paso de nuestro proceso.
+                    </p>
+                    <p class="text-stone-700 mb-4">
+                        Nuestra Misión es ofrecer tintes de cochinilla de la más alta calidad, elaborados de manera sostenible y artesanal, promoviendo el valor de los productos naturales y la tradición textil.
+                    </p>
+                    <p class="text-stone-700">
+                        Nuestra Visión es ser reconocidos a nivel nacional como líderes en la producción de tintes naturales, inspirando a la comunidad a redescubrir la belleza y el valor de los pigmentos de la tierra. En nuestro taller, cada paso es un acto de amor por nuestra tradición.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold mb-4">¿Hablamos?</h2>
+                <p class="text-stone-600 mb-8 max-w-2xl mx-auto">Si tienes alguna pregunta, deseas hacer un pedido especial o simplemente quieres saludarnos, escríbenos.</p>
+                <div class="max-w-xl mx-auto">
+                    <a href="https://wa.me/51912345678" target="_blank" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block">Enviar Mensaje por WhatsApp</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-800 text-stone-300 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Taller de Tintes Naturales. Todos los derechos reservados.</p>
+            <p class="text-sm text-stone-400 mt-1">Colores de la tierra, una creación a la vez.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script para el menú móvil
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        /**
+         * Función para enviar un pedido por WhatsApp.
+         * @param {string} color - El color del producto que se desea comprar.
+         */
+        function orderProduct(color) {
+            // El número 
+            const phoneNumber = '51988812082'; // Reemplaza esto con tu número de WhatsApp
+            const message = `Hola, me gustaría comprar el tinte de cochinilla color ${color}. ¿Está disponible?`;
+            
+            // Codifica el mensaje para que sea una URL segura
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Crea la URL de WhatsApp
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            // Abre una nueva pestaña con la URL de WhatsApp
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+</body>
+</html>
